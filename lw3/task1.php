@@ -18,13 +18,13 @@
 	
 	function removeExtraBlanks(string $text): ?string
 	{
-		$formattedName = '';
+		$formattedString = '';
 		$isBlankFound = true;
 		for ($i = 0; $i < strlen($text); $i++)
 		{
 			if ($text[$i] !== ' ')
 			{
-				$formattedName .= $text[$i];
+				$formattedString .= $text[$i];
 				$isBlankFound = false;
 			}
 			else
@@ -32,9 +32,9 @@
 				if ($isBlankFound == false)
 				{
 					$isBlankFound = true;
-					$formattedName .= $text[$i];
+					$formattedString .= $text[$i];
 				}
 			}
 		}
-		return $formattedName;
+		return $formattedString;
 	}
