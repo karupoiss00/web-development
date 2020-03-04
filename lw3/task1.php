@@ -1,5 +1,7 @@
 <?php
 	header("Content-Type: text/plain");
+	require_once('utils.php');
+	
 	$inputText = getQueryStringParameter('text');
 	
 	if ($inputText !== null)
@@ -11,12 +13,7 @@
 		echo 'Введены некорректные данные';
 	}
 	
-	function getQueryStringParameter(string $name): ?string
-	{
-		return isset($_GET[$name]) ? $_GET[$name] : null;
-	}
-	
-	function removeExtraBlanks(string $text): ?string
+	function removeExtraBlanks(string $text): string
 	{
 		$formattedString = '';
 		$isBlankFound = true;
