@@ -6,7 +6,7 @@
 	
 	$email = getQueryStringParameter('email');
 
-	if ($email !== null)
+	if ($email !== null && strlen($email) > 0)
 	{
 		$filename = DATA_DIR . $email . '.txt';
 		$data = file_get_contents($filename);

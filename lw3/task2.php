@@ -4,7 +4,7 @@
 	
 	$inputText = getQueryStringParameter('identifier');
 	
-	if ($inputText !== null)
+	if ($inputText !== null && strlen($inputText) > 0)
 	{
 		checkIndentifier($inputText);
 	}

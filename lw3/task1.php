@@ -4,7 +4,7 @@
 	
 	$inputText = getQueryStringParameter('text');
 	
-	if ($inputText !== null)
+	if ($inputText !== null && strlen($inputText) > 0)
 	{
 		echo removeExtraBlanks($inputText);
 	}

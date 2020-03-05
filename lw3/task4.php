@@ -9,7 +9,7 @@
 	$email = getQueryStringParameter('email');
 	$age = getQueryStringParameter('age');
 	
-	if ($email !== null)
+	if ($email !== null && strlen($email) > 0)
 	{
 		$filename = DATA_DIR . $email . '.txt';
 		$data = array(

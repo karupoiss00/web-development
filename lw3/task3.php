@@ -4,7 +4,7 @@
 	
 	$inputText = getQueryStringParameter('password');
 	
-	if ($inputText !== null)
+	if ($inputText !== null && strlen($inputText) > 0)
 	{
 		echo countPasswordDifficulty($inputText);
 	}
@@ -29,16 +29,19 @@
 				$digitsCount++;
 				$hasDigits = true;
 			}
-			if (ctype_upper(isLetter($password[$i])))
-			{
-				$upperCaseLettersCount++;
-				$hasLetters = true;
-			}
-			if (ctype_lower(isLetter($password[$i])))
-			{
-				$lowerCaseLettersCount++;
-				$hasLetters = true;
-			}
+			if (isLetter($password[$i]))
+            {
+                if (ctype_upper($password[$i]))
+                {
+                    $upperCaseLettersCount++;
+                }
+                if (ctype_lower($password[$i]))
+                {
+                    $lowerCaseLettersCount++;
+                }
+                $hasLetters = true;
+            }
+
 			if (substr_count($password[$i], $password) > 1)
 			{
 				$difficulty -= substr_count($password[$i], $password);
@@ -60,5 +63,4 @@
 		$difficulty += ((strlen($password) - $lowerCaseLettersCount) * 2);
 		
 		return $difficulty;
-		
 	}
