@@ -1,24 +1,10 @@
-@font-face {
-    font-family: OpenSansSemibold;
-    src: url("fonts/opensans_semibold.ttf");
-}
-
-@font-face {
-    font-family: OpenSansBold;
-    src: url("fonts/opensans_bold.ttf");
-}
-
-@font-face {
-    font-family: OpenSansRegular;
-    src: url("fonts/opensans_regular.ttf");
-}
 .main-container {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: flex-start;
     margin-top: 100px;
-    margin-right: 20px;
+    margin-right: 22px;
     margin-left: 20px;
 }
 
