@@ -3,53 +3,61 @@
 <head           >
     <meta charset="UTF-8" />
     <title>Labwork 5</title>
+    <link rel="stylesheet" href="css/style.css">
     <style>
-        @font-face {
-            font-family: OpenSansSemibold;
-            src: url("fonts/opensans_semibold.ttf");
+        .quote-block
+        {
+            margin-left: 60px;
+            margin-top: 50px;
         }
 
-        @font-face {
-            font-family: OpenSansBold;
-            src: url("fonts/opensans_bold.ttf");
+        .list-block
+        {
+            width: 330px;
+            margin-right: 60px;
         }
 
-        @font-face {
-            font-family: OpenSansRegular;
-            src: url("fonts/opensans_regular.ttf");
+        .info-block
+        {
+            width: 570px;
         }
     </style>
-    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-	<div class="main-container">
-        <div class="left-box">
+    <div class="main-container">
+        <div class="upper-container">
             <img class="img-item" src="images/photo.png" alt="Что-то пошло не так :/" />
-            <p class="favourites">Любимые писатели:</p>
-            <ul>
-                <li class="favourite-element">Айзек Азимов</li>
-                <li class="favourite-element">Говард Лавкрафт</li>
-                <li class="favourite-element">Дмитрий Глуховский</li>
-                <li class="favourite-element">Чак Паланик</li>
-            </ul>
-            <p class="favourites">Любимые фильмы:</p>
-            <ol>
-                <li class="favourite-element">Шоу Трумена</li>
-                <li class="favourite-element">Малхолланд Драйв</li>
-                <li class="favourite-element">Семь жизней</li>
-                <li class="favourite-element">Гравитация</li>
-            </ol>
+            <div class="quote-block">
+                <img src="images/quote.png" alt="Что-то пошло не так :/" />
+                <p class="quote">Мы берем на себя, потому что мало чего боимся</p>
+                <p class="quotes-author">— Том Демарко. Deadline</p>
+            </div>
         </div>
-        <div class="right-box">
-            <img src="images/quote.png" alt="Что-то пошло не так :/" />
-            <p class="quote">Мы берем на себя, потому что мало чего боимся</p>
-            <p class="quotes-author">— Том Демарко. Deadline</p>
-            <h1 class="first-heading">Jane Doe</h1>
-            <p class="green-line"></p>
-            <p class="text">В 1930-е годы прошлого века физик Джордж Гамоу из университета штата Колорадо начал публиковать мини-сериал рассказов о неком мистере Томпкинсе, банковском клерке средних лет. Мистер Томпкинс, как явствовало из этих историй, интересовался современной наукой.</p>
-            <h1 class="second-heading">Мое хобби</h1>
-            <p class="text">Он регулярно посещал вечерние лекции местного профессора и, разумеется, всегда засыпал на самом интересном месте. А когда просыпался, то обнаруживал себя в каком-нибудь параллельном мире, гдеодин из основных законов физики действовал не такб как в его мире.</p>
-            <a class="write-me" href="https://vk.com/karupoiss00">Напиши мне→</a>
+        <div class="lower-container">
+            <div class="list-block">
+                <p class="favourites">Любимые писатели:</p>
+                <ul>
+                    <li class="favourite-element">Айзек Азимов</li>
+                    <li class="favourite-element">Говард Лавкрафт</li>
+                    <li class="favourite-element">Дмитрий Глуховский</li>
+                    <li class="favourite-element">Чак Паланик</li>
+                </ul>
+                <p class="favourites">Любимые фильмы:</p>
+                <ol>
+                    <li class="favourite-element">Шоу Трумена</li>
+                    <li class="favourite-element">Малхолланд Драйв</li>
+                    <li class="favourite-element">Семь жизней</li>
+                    <li class="favourite-element">Гравитация</li>
+                </ol>
+            </div>
+            <div class="info-block">
+                <h1 class="first-heading">Jane Doe</h1>
+                <p class="green-line"></p>
+                <p class="text">В 1930-е годы прошлого века физик Джордж Гамоу из университета штата Колорадо начал публиковать мини-сериал рассказов о неком мистере Томпкинсе, банковском клерке средних лет. Мистер Томпкинс, как явствовало из этих историй, интересовался современной наукой.</p>
+                <p class="second-heading">Мое хобби</p>
+                <p class="text">Он регулярно посещал вечерние лекции местного профессора и, разумеется, всегда засыпал на самом интересном месте. А когда просыпался, то обнаруживал себя в каком-нибудь параллельном мире, гдеодин из основных законов физики действовал не такб как в его мире.</p>
+                <a class="write-me" href="https://vk.com/karupoiss00">Напиши мне→</a>
+            </div>
         </div>
     </div>
 </body>

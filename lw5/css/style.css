@@ -1,41 +1,65 @@
+@font-face {
+    font-family: OpenSansSemibold;
+    src: url("../fonts/opensans_semibold.ttf");
+}
+
+@font-face {
+    font-family: OpenSansBold;
+    src: url("../fonts/opensans_bold.ttf");
+}
+@font-face {
+    font-family: OpenSansRegular;
+    src: url("../fonts/opensans_regular.ttf");
+}
+
 .main-container {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    flex-direction: column;
     align-items: flex-start;
     margin-top: 100px;
     margin-right: 22px;
     margin-left: 20px;
 }
-
-.left-box {
-    width: 330px;
-    margin-right: 60px;
+.upper-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    width: 960px;
+    height: 350px;
+    margin-bottom: 60px;
 }
 
-.right-box {
-    width: 570px;
+.lower-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    width: 960px;
+    margin-top: 50px;
+    margin-right: 22px;
+    margin-left: 20px;
 }
 
 .img-item {
-    margin-bottom: 50px;
+    border-radius: 5px;
 }
 
-.quote {
-    font-family: Georgia;
+.quote {   
     font: italic 28px normal;
+    font-family: Georgia;
     color: #8e8e8e;
     margin-top: 0;
     margin-bottom: 20px;
     margin-left: 60px;
     padding: 0;
     width: 440px;
+    position: relative;
+    top: -14px;
 }
 .quotes-author {
     font-family: OpenSansSemibold;
     font-size: 16px;
     margin-top: 0;
-    margin-bottom: 211px;
+    margin-bottom: 155px;
     margin-left: 60px;
     padding: 0;
     width: 440px;
@@ -49,8 +73,8 @@
     padding: 0;
 }
 .favourite-element {
-    font-family: Georgia;
     font: normal 18px normal;
+    font-family: Georgia;
     margin-bottom: 15px;
 }
 
@@ -58,7 +82,7 @@
     font-family: OpenSansBold;
     font-size: 40px;
     margin: 0;
-    padding: 0;
+    padding: 0;  
 }
 
 .second-heading {
@@ -70,8 +94,8 @@
 }
 
 .text {
-    font-font: Georgia;
     font: normal 20px/36px normal;
+    font-family: Georgia;
     margin: 0;
     margin-bottom: 50px;
     padding: 0;
