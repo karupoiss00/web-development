@@ -1,7 +1,7 @@
 function isPrime(n) {
     if (typeof n === 'number') {
         checkNumber(n);
-    } else if (Array.isArray(n)){
+    } else if (Array.isArray(n)) {
         for (let element of n) {
             checkNumber(element);
         }
