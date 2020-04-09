@@ -37,7 +37,7 @@
 .lower-container
 {
     display: flex;
-    flex-direction: row;
+    flex-direction: row-reverse;
     align-items: flex-start;
     width: 960px;
     margin-right: 22px;
@@ -51,8 +51,7 @@
 
 .quote
 {
-    font: italic 28px normal;
-    font-family: Georgia;
+    font: italic 28px Georgia;
     color: #8e8e8e;
     margin-top: 0;
     margin-bottom: 20px;
@@ -64,8 +63,7 @@
 }
 .quotes-author
 {
-    font-family: OpenSansSemibold;
-    font-size: 16px;
+    font: normal 16px Georgia;
     margin-top: 0;
     margin-bottom: 155px;
     margin-left: 60px;
@@ -74,8 +72,7 @@
 }
 .favourites
 {
-    font-family: OpenSansSemibold;
-    font-size: 22px;
+    font: normal 22px OpenSansSemibold;
     color: #15a98c;
     margin: 0;
     margin-bottom: 30px;
@@ -90,8 +87,7 @@
 
 .first-heading
 {
-    font-family: OpenSansBold;
-    font-size: 40px;
+    font: normal 40px OpenSansBold;
     margin: 0;
     padding: 0;  
 }
@@ -107,7 +103,7 @@
 
 .text
 {
-    font: normal 20px/36px normal;
+    font: normal 20px/1.8 normal;
     font-family: Georgia;
     margin: 0;
     margin-bottom: 50px;
@@ -126,12 +122,12 @@
 
 .write-me
 {
-    font: normal 18px normal;
+    font-size: 18px;
     color: #15a98b;
 }
 .write-me:hover
 {
-    font: normal 18px normal;
+    font: normal 18px serif;
     color: #098d72;
 }
 
