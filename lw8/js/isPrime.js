@@ -30,7 +30,7 @@ function checkNumber(n) {
         if (n % i === 0) {
             numberState = " - составное число";
         }
-        i +=1;
+        i += 1;
     }
     console.log(n.toString(), numberState);
 }
