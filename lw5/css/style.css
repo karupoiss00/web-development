@@ -80,8 +80,7 @@
 }
 .favourite-element
 {
-    font: normal 18px normal;
-    font-family: Georgia;
+    font: normal 18px Georgia;
     margin-bottom: 15px;
 }
 
@@ -103,8 +102,7 @@
 
 .text
 {
-    font: normal 20px/1.8 normal;
-    font-family: Georgia;
+    font: normal 20px/1.8 Georgia;
     margin: 0;
     margin-bottom: 50px;
     padding: 0;
