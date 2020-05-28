@@ -23,11 +23,7 @@ function  calc(calcStr) {
             break;
         }
 
-        if (symbAndNum.length < 3 ||
-            !((symbAndNum[i] == '*') ||
-                (symbAndNum[i] == '/') ||
-                (symbAndNum[i] == '+') ||
-                (symbAndNum[i] == '-'))) {
+        if (symbAndNum.length < 3)  {
             missChStr = true;
             break;
         }
@@ -78,9 +74,18 @@ function mathematics(oper, firstNum, secNum) {
             firstNum = parseFloat(firstNum) / parseFloat(secNum);
             break
         }
-        case '*' : {firstNum = parseFloat(firstNum) * parseFloat(secNum); break}
-        case '+' : {firstNum = parseFloat(firstNum) + parseFloat(secNum); break}
-        case '-' : {firstNum = parseFloat(firstNum) - parseFloat(secNum); break}
+        case '*' : {
+            firstNum = parseFloat(firstNum) * parseFloat(secNum);
+            break
+        }
+        case '+' : {
+            firstNum = parseFloat(firstNum) + parseFloat(secNum);
+            break
+        }
+        case '-' : {
+            firstNum = parseFloat(firstNum) - parseFloat(secNum);
+            break
+        }
     }
     firstNum = firstNum.toString();
     return firstNum;
