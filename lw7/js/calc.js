@@ -1,40 +1,87 @@
-const operations = {
-    "+": (x, y) => x + y,
-    "-": (x, y) => x - y,
-    "*": (x, y) => x * y,
-    "/": (x, y) => x / y,
-};
+function  calc(calcStr) {
+    calcStr = calcStr.replace(/[()]/g, ' ');
+    calcStr = calcStr.replace(/\s+/g, ' ').trim();
+    let symbAndNum = calcStr.split(' ');
+    
+    let i = 0;
+    let div0 = false;
+    let missChStr = false;
+    let corrStr = true;
 
-const operators = {
-    "(": 3,
-    ")": 3,
-    "*": 2,
-    "/": 2,
-    "+": 1,
-    "-": 1
-}
+    for (let k = 0; k < symbAndNum.length; k++) {
+        if (!((isFinite(symbAndNum[k])) ||
+             ((symbAndNum[k] == '*')    ||
+              (symbAndNum[k] == '/')    || 
+              (symbAndNum[k] == '+')    || 
+              (symbAndNum[k] == '-')))) {
+            corrStr = false;
+        } 
+    }
 
-function getLastSignFromStack(stack) {
+    while (symbAndNum.length > 1) {
+        if (!corrStr) {
+            break;
+        }
 
-}
+        if (symbAndNum.length < 3 ||
+            !((symbAndNum[i] == '*') ||
+                (symbAndNum[i] == '/') ||
+                (symbAndNum[i] == '+') ||
+                (symbAndNum[i] == '-'))) {
+            missChStr = true;
+            break;
+        }
 
-let evaluate = (expr) => {
-        let operationStack = [];
-        let outputStack = [];
-
-        expr.split(' ').forEach((token) => {
-            if (token in operators) {
-                if (token === ")") {
-                    
-                }
-                if (operators[token] === operators[operationStack[operationStack.length - 1]]) {
-                    outputStack.push(operationStack.pop())
-                }
-                operationStack.push(token);
-            } else {
-                outputStack.push(parseInt(token));
+        if (((symbAndNum[i] === '*') ||
+            (symbAndNum[i] === '/') ||
+             (symbAndNum[i] === '+') ||
+             (symbAndNum[i] === '-')) &&
+             (isFinite(symbAndNum[i + 1])) && 
+             (isFinite(symbAndNum[i + 2])) ) {
+            symbAndNum[i] = mathematics(symbAndNum[i], symbAndNum[i + 1], symbAndNum[i + 2]);
+            
+            if (symbAndNum[i] == 'Infinity') {
+                div0 = true;
+                break;
             }
-        });
-        console.log(stack);
+            
+            delete symbAndNum[i + 1];
+            delete symbAndNum[i + 2];
+            for (let j = i + 1; j < symbAndNum.length - 2; j++) {
+                symbAndNum[j] = symbAndNum[j + 2];
+            }
+            symbAndNum.pop();
+            symbAndNum.pop();
 
-};
+            i = 0;
+        } else {
+            i++;
+        }
+    }
+
+    if (missChStr) {
+        console.log('Ошибка: недостающие данные');
+    } else if (!corrStr) {
+        console.log('Ошибка: некорректно введенные данные');
+    }  else if (div0) {
+        console.log('Ошибка: попытка деления на ноль');
+    } else {
+        symbAndNum = parseFloat(symbAndNum);
+        console.log(symbAndNum);
+    }        
+    
+}
+
+function mathematics(oper, firstNum, secNum) {
+    switch(oper) {
+        case '/' : {
+            firstNum = parseFloat(firstNum) / parseFloat(secNum);
+            break
+        }
+        case '*' : {firstNum = parseFloat(firstNum) * parseFloat(secNum); break}
+        case '+' : {firstNum = parseFloat(firstNum) + parseFloat(secNum); break}
+        case '-' : {firstNum = parseFloat(firstNum) - parseFloat(secNum); break}
+    }
+    firstNum = firstNum.toString();
+    return firstNum;
+} 
